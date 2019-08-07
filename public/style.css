@@ -75,6 +75,7 @@ body {
 }
 
 body {
+    direction: rtl;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 15px;
@@ -410,9 +411,10 @@ input:-webkit-autofill:focus {
 }
 
 .screen-slider .owl-controls {
-    position: absolute;
+    /* position: absolute;
     left: 0;
-    top: 100%;
+    top: 100%; */
+    text-align: center;
 }
 
 .screen-slider .owl-controls .owl-nav > div {
@@ -696,12 +698,12 @@ input:-webkit-autofill:focus {
 }
 
 #accordion .panel .panel-title {
-    padding: 30px 0 30px 60px;
+    padding: 30px 60px 30px 0;
     position: relative;
 }
 
 #accordion .panel .panel-collapse {
-    padding-left: 60px;
+    padding-right: 60px;
 }
 
 #accordion .panel .panel-title a span:after,
@@ -709,7 +711,6 @@ input:-webkit-autofill:focus {
 #accordion .panel .panel-title a span {
     content: '';
     position: absolute;
-    left: 0;
     top: 20px;
     width: 36px;
     height: 36px;
@@ -719,6 +720,9 @@ input:-webkit-autofill:focus {
     transition: 0.3s;
 }
 
+#accordion .panel .panel-title a span {
+    right: 0;
+}
 
 #accordion .panel .panel-title a span:before,
 #accordion .panel .panel-title a span:after {
@@ -802,7 +806,7 @@ input:-webkit-autofill:focus {
 .side-icon-box {
     margin-bottom: 30px;
     position: relative;
-    padding-left: 80px;
+    padding-right: 80px;
 }
 
 .side-icon-box a {
@@ -811,7 +815,7 @@ input:-webkit-autofill:focus {
 
 .side-icon-box .side-icon {
     position: absolute;
-    left: 0;
+    right: 0;
     top: 0;
     width: 60px;
 }
