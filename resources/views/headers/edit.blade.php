@@ -22,14 +22,16 @@
             </div>
             <div class="col-md-6 my-3">
                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                    <label class="custom-control-label" for="customCheck1">اسلایدر موبایل را نمایش بده</label>
+                    <input type="hidden" name="mobile_visible" value="0">
+                    <input type="checkbox" class="custom-control-input" name="mobile_visible" id="mobile_visible" value="1" @if ($header->mobile_visible) checked @endif >
+                    <label class="custom-control-label" for="mobile_visible">اسلایدر موبایل را نمایش بده</label>
                 </div>
             </div>
             <div class="col-md-6 my-3">
                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck2">
-                    <label class="custom-control-label" for="customCheck2">انیمیشن بارگذاری را نمایش بده</label>
+                    <input type="hidden" name="preloader" value="0">
+                    <input type="checkbox" class="custom-control-input" name="preloader" id="preloader" value="1" @if ($header->preloader) checked @endif>
+                    <label class="custom-control-label" for="preloader">انیمیشن بارگذاری را نمایش بده</label>
                 </div>
             </div>
             <hr class="col-12">
