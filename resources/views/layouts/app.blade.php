@@ -51,10 +51,17 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right text-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ url('home') }}">
+                                        <i class="ti-dashboard ml-1"></i>
+                                        داشبورد
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{-- {{ __('Logout') }} --}}
+                                        <i class="ti-power-off ml-1"></i>
+                                        خروج
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

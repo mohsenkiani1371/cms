@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <form class="container" action='{{url("headers/$header->id")}}' method="post">
+    <form class="container" action="{{ url('headers/'.$header->id) }}" method="post">
         @csrf
         {{method_field('PUT')}}
         <div class="row">
