@@ -11,6 +11,11 @@
 |
 */
 
+// Resource routes
+Route::resource('headers', 'HeaderController')->only(['edit', 'update']);
+
+// Laravel auth routes
+
 Route::get('/', 'IndexController@main');
 
 Auth::routes();
