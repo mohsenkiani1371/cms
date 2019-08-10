@@ -65,6 +65,7 @@ h3,
 h4,
 h5,
 h6 {
+    font-family: 'Dinar', 'OpenSans';
     margin: 0 0 10px;
     font-weight: 600;
 }
@@ -76,7 +77,7 @@ body {
 
 body {
     direction: rtl;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Yekan', 'Dinar', 'OpenSans';
     font-weight: 400;
     font-size: 15px;
     line-height: 1.8;
