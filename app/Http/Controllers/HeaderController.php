@@ -28,6 +28,6 @@ class HeaderController extends Controller
             'preloader' => 'nullable|boolean',
         ]);
         $header->update($data);
-        return back();
+        return back()->withMessage('هدر با موفقیت ویرایش شد.');
     }
 }
