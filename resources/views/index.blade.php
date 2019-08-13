@@ -19,5 +19,7 @@
     @include('partials.faq')
     @include('partials.clients')
     @include('partials.blog')
-    @include('partials.footer')
+    @if ($footer->visible)
+        @include('partials.footer')
+    @endif
 @endsection
