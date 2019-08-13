@@ -13,7 +13,7 @@ style="background: #000000 url('{{ asset($header->bg_path) }}') no-repeat scroll
                     <div class="screen-box screen-slider">
                         @foreach ($header->photos as $photo)
                             <div class="item">
-                                <img src="{{$photo->path}}">
+                                <img src="{{ $photo->path }}">
                             </div>
                         @endforeach
                         {{-- <div class="item">

@@ -4,6 +4,7 @@
         @csrf
         {{method_field('PUT')}}
         <div class="row">
+            <h3 class="col-12 dinar text-info mb-4">ویرایش هدر</h3>
             <div class="col-md-3 my-2">
                 <label for="title">عنوان هدر</label>
                 <input type="text" name="title" value="{{$header->title}}" class="form-control">
@@ -39,8 +40,33 @@
                 </div>
             </div>
             <hr class="col-12">
-            <div class="col-md-5"></div>
-            <div class="col-md-2">
+
+            <h3 class="col-12 dinar text-info mb-4">عکس های اسلایدر</h3>
+            @foreach ($header->photos as $photo)
+                <div class="col-md-3 my-2 photo-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="{{ asset($photo->path) }}" class="img-fluid">
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="javascript:void" class="delete-photo"  data-photo-id="{{ $photo->id }}">
+                                <i class="ti-trash text-danger s-1-5x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            <hr class="col-12">
+            <div class="col-md-3 m-auto">
+                <label for="slider">آپلود عکس</label>
+                <input type="file" name="slider[]" class="form-control" multiple>
+            </div>
+
+        </div>
+        <hr class="col-12">
+        <div id="photos-to-be-deleted"></div>
+        <div class="row">
+            <div class="col-md-2 m-auto">
                 <button type="submit" class="btn btn-primary btn-block" name="button">
                     <i class="ti-check ml-1"></i>
                     تأیید</button>
