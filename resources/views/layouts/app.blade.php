@@ -28,7 +28,7 @@
 
         @include('fragments.nav')
 
-        <main class="py-4">
+        <main class="py-4 container">
             <div class="container">
                 @include('fragments.message')
                 @include('fragments.errors')
