@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Section;
 
 class HomeController extends Controller
 {
@@ -26,7 +26,8 @@ class HomeController extends Controller
     {
         $user = auth()->user();
         if ($user->admin == 1) {
-            return view('dashboards.admin');
+            $sections = Section::orderBy('position')->get();
+            return view('dashboards.admin', compact('sections'));
         }
         else {
             return view('dashboards.user');

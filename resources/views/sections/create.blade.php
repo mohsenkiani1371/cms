@@ -9,13 +9,13 @@
                 <select class="form-control" name="type" required>
                     <option value=""> -- انتخاب کنید -- </option>
                     @foreach ($section_types as $section_type)
-                        <option value="$section_type">{{ $section_type }}</option>
+                        <option value="{{ $section_type }}">{{ translate($section_type) }}</option>
                     @endforeach
                 </select>
             </div>
             <div class="col-md-3 my-2 ml-auto">
                 <label for="position">ترتیب</label>
-                <input type="number" name="position" id="position" value="" class="form-control" required>
+                <input type="number" name="position" id="position" value="{{ $count+1 }}" class="form-control" required>
             </div>
         </div>
         <hr>

@@ -19,3 +19,34 @@ function upload($new_file, $prev_file = null)
     $new_file->move(base_path($relative_path), $file_name);
     return "storage/" . $file_name;
 }
+
+function translate($word)
+{
+    switch ($word) {
+        case 'features':
+            return "خدمات";
+            break;
+        case 'tabs':
+            return "زبانه";
+            break;
+        case 'prices':
+            return "قیمت";
+            break;
+        case 'cards':
+            return "کارت";
+            break;
+        case 'faq':
+            return "سؤالات متداول";
+            break;
+        case 'clients':
+            return "مشتریان";
+            break;
+        case 'posts':
+            return "پست ها";
+            break;
+
+        default:
+            return $word;
+            break;
+    }
+}
