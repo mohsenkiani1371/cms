@@ -18,6 +18,7 @@ Route::resource('footers', 'FooterController')->only(['edit', 'update']);
 // Laravel auth routes
 
 Route::get('/', 'IndexController@main');
+Route::post('message', 'IndexController@store_message');
 
 Auth::routes();
 
