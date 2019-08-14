@@ -31,6 +31,11 @@
                                 داشبورد
                             </a>
 
+                            <a class="dropdown-item" href="{{ url('messages') }}">
+                                <i class="fa fa-envelope-o ml-1"></i>
+                                پیام های کاربران
+                            </a>
+
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
