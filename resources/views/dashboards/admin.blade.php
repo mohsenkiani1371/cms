@@ -55,7 +55,7 @@
             <span class="lead">مدیریت فوتر</span>
         </div>
         <div class="card-footer text-left">
-            <a href="#" class="text-decoration-none text-success"> <i class="ti-pencil s-1-5x" title="ویرایش"></i> </a>
+            <a href="/footers/1/edit" class="text-decoration-none text-success"> <i class="ti-pencil s-1-5x" title="ویرایش"></i> </a>
             @if (true)
                 <a href="#" class="text-decoration-none text-warning"> <i class="ti-eye s-1-5x" title="نمایش"></i> </a>
             @else
