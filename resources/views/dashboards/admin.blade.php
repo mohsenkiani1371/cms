@@ -14,12 +14,7 @@
             <span class="lead">مدیریت منو</span>
         </div>
         <div class="card-footer text-left">
-            <a href="#" class="text-decoration-none text-success"> <i class="ti-pencil s-1-5x" title="ویرایش"></i> </a>
-            @if (true)
-                <a href="#" class="text-decoration-none text-warning"> <i class="ti-eye s-1-5x" title="نمایش"></i> </a>
-            @else
-                <a href="#" class="text-decoration-none text-warning"> <i class="ti-na s-1-5x" title="عدم نمایش"></i> </a>
-            @endif
+            <a href="#" class="text-decoration-none text-success"> <i class="fa fa-edit s-1-5x" title="ویرایش"></i> </a>
         </div>
     </div>
     <div class="card my-2">
@@ -27,12 +22,7 @@
             <span class="lead">مدیریت هدر</span>
         </div>
         <div class="card-footer text-left">
-            <a href="{{url('headers/1/edit')}}" class="text-decoration-none text-success"> <i class="ti-pencil s-1-5x" title="ویرایش"></i> </a>
-            @if (true)
-                <a href="#" class="text-decoration-none text-warning"> <i class="ti-eye s-1-5x" title="نمایش"></i> </a>
-            @else
-                <a href="#" class="text-decoration-none text-warning"> <i class="ti-na s-1-5x" title="عدم نمایش"></i> </a>
-            @endif
+            <a href="{{url('headers/1/edit')}}" class="text-decoration-none text-success"> <i class="fa fa-edit s-1-5x" title="ویرایش"></i> </a>
         </div>
     </div>
 
@@ -42,13 +32,19 @@
                 <span class="lead">{{ translate($section->type) }}</span>
             </div>
             <div class="card-footer text-left">
-                <a href='{{ url("sections/$section->id/edit") }}' class="text-decoration-none text-success">
-                    <i class="ti-pencil s-1-5x" title="ویرایش"></i>
+                <a href='#' class="text-decoration-none text-success mr-3">
+                    <i class="fa fa-pencil s-1-5x" title="تغییر خصوصیات"></i>
                 </a>
-                @if (true)
-                    <a href="#" class="text-decoration-none text-warning"> <i class="ti-eye s-1-5x" title="نمایش"></i> </a>
+                <a href='{{ url("sections/$section->id/edit") }}' class="text-decoration-none text-success mr-3">
+                    <i class="fa fa-edit s-1-5x" title="ویرایش محتویات"></i>
+                </a>
+                <a href='#' class="text-decoration-none text-danger mr-3">
+                    <i class="fa fa-trash s-1-5x" title="حذف"></i>
+                </a>
+                @if ($section->visible == 0)
+                    <a href="#" class="text-decoration-none text-primary"> <i class="fa fa-eye s-1-5x mr-3" title="نمایش"></i> </a>
                 @else
-                    <a href="#" class="text-decoration-none text-warning"> <i class="ti-na s-1-5x" title="عدم نمایش"></i> </a>
+                    <a href="#" class="text-decoration-none text-dark"> <i class="fa fa-eye-slash s-1-5x mr-3" title="عدم نمایش"></i> </a>
                 @endif
             </div>
         </div>
@@ -59,12 +55,7 @@
             <span class="lead">مدیریت فوتر</span>
         </div>
         <div class="card-footer text-left">
-            <a href="/footers/1/edit" class="text-decoration-none text-success"> <i class="ti-pencil s-1-5x" title="ویرایش"></i> </a>
-            @if (true)
-                <a href="#" class="text-decoration-none text-warning"> <i class="ti-eye s-1-5x" title="نمایش"></i> </a>
-            @else
-                <a href="#" class="text-decoration-none text-warning"> <i class="ti-na s-1-5x" title="عدم نمایش"></i> </a>
-            @endif
+            <a href="/footers/1/edit" class="text-decoration-none text-success"> <i class="fa fa-edit s-1-5x" title="ویرایش"></i> </a>
         </div>
     </div>
 </div>

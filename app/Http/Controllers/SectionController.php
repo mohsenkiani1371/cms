@@ -26,7 +26,8 @@ class SectionController extends Controller
     {
         $section_types = ['features','tabs','prices', 'cards', 'faq', 'clients', 'posts'];
         $count = Section::count();
-        return view('sections.create', compact('section_types', 'count'));
+        $section = new Section;
+        return view('sections.create_or_edit', compact('section_types', 'count', 'section'));
     }
 
     /**
@@ -37,10 +38,7 @@ class SectionController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'type' => 'required',
-            'position' => 'required',
-        ]);
+        $data = Self::validation();
         Section::create($data);
         return redirect('home')->withMessage('بخش جدید به سایت اضافه شد.');
     }
@@ -64,7 +62,8 @@ class SectionController extends Controller
      */
     public function edit(Section $section)
     {
-        //
+        $section_types = ['features','tabs','prices', 'cards', 'faq', 'clients', 'posts'];
+        return view('sections.create_or_edit', compact('section_types', 'section'));
     }
 
     /**
@@ -76,7 +75,8 @@ class SectionController extends Controller
      */
     public function update(Request $request, Section $section)
     {
-        //
+        $data = Self::validation();
+        $section->update();
     }
 
     /**
@@ -88,5 +88,13 @@ class SectionController extends Controller
     public function destroy(Section $section)
     {
         //
+    }
+
+    public static function validation()
+    {
+        return request()->validate([
+            'type' => 'required',
+            'position' => 'required',
+        ]);
     }
 }
