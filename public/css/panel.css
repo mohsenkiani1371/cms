@@ -33,3 +33,13 @@ body {
 .delete-photo:hover {
     text-decoration: none;
 }
+
+/* are-you-sure box */
+#are_you_sure {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 100;
+    padding: 20px 50px;
+    display: none;
+}

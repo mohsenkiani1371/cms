@@ -32,19 +32,23 @@
                 <span class="lead">{{ translate($section->type) }}</span>
             </div>
             <div class="card-footer text-left">
-                <a href='#' class="text-decoration-none text-success mr-3">
+                <a href='#' class="btn btn-link text-decoration-none text-success mr-3">
                     <i class="fa fa-pencil s-1-5x" title="تغییر خصوصیات"></i>
                 </a>
-                <a href='{{ url("sections/$section->id/edit") }}' class="text-decoration-none text-success mr-3">
+                <a href="#" class="btn btn-link text-decoration-none text-success mr-3">
                     <i class="fa fa-edit s-1-5x" title="ویرایش محتویات"></i>
                 </a>
-                <a href='#' class="text-decoration-none text-danger mr-3">
+                <a href="javascript:void" class="btn btn-link text-decoration-none text-danger danger-alert mr-3" data-target="section-{{$section->id}}">
                     <i class="fa fa-trash s-1-5x" title="حذف"></i>
                 </a>
+                <form class="d-none" id="section-{{$section->id}}" action="{{url('sections/'.$section->id)}}" method="post">
+                    @csrf
+                    {{ method_field('DELETE') }}
+                </form>
                 @if ($section->visible == 0)
-                    <a href="#" class="text-decoration-none text-primary"> <i class="fa fa-eye s-1-5x mr-3" title="نمایش"></i> </a>
+                    <a href="{{url('sections/visibility/'.$section->id)}}" class="btn btn-link text-decoration-none text-primary mr-3"> <i class="fa fa-eye s-1-5x" title="نمایش"></i> </a>
                 @else
-                    <a href="#" class="text-decoration-none text-dark"> <i class="fa fa-eye-slash s-1-5x mr-3" title="عدم نمایش"></i> </a>
+                    <a href="{{url('sections/visibility/'.$section->id)}}" class="btn btn-link text-decoration-none text-dark mr-3"> <i class="fa fa-eye-slash s-1-5x" title="عدم نمایش"></i> </a>
                 @endif
             </div>
         </div>

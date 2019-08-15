@@ -7,15 +7,6 @@ use Illuminate\Http\Request;
 
 class SectionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -41,17 +32,6 @@ class SectionController extends Controller
         $data = Self::validation();
         Section::create($data);
         return redirect('home')->withMessage('بخش جدید به سایت اضافه شد.');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Section  $section
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Section $section)
-    {
-        //
     }
 
     /**
@@ -87,7 +67,15 @@ class SectionController extends Controller
      */
     public function destroy(Section $section)
     {
-        //
+        $section->delete();
+        return back()->withMessage('بخش مورد نظر حذف شد.');
+    }
+
+    public function visibility(Section $section)
+    {
+        $section->visible = !$section->visible;
+        $section->save();
+        return back()->withMessage('وضعیت آشکار - پنهان تغییر کرد.');
     }
 
     public static function validation()

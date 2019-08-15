@@ -32,6 +32,7 @@
             <div class="container">
                 @include('fragments.message')
                 @include('fragments.errors')
+                @include('fragments.are_you_sure')
             </div>
             @yield('content')
         </main>
