@@ -5,9 +5,14 @@
         <div id="box">
             @foreach ($contents as $content)
                 <div class="row clone">
-                    <div class="col-md-3 my-2">
+                    <div class="col-md-1 my-2">
+                        <a class="btn btn-link text-danger delete-clone-row" title="حذف" @if(count($contents) == 1) style="display: none;" @endif>
+                            <i class="fa fa-trash fa-2x m-3"></i>
+                        </a>
+                    </div>
+                    <div class="col-md-2 my-2">
                         <label for="position">ترتیب</label>
-                        <input type="number" name="position[]" class="form-control" value="{{$content->position}}" required>
+                        <input type="number" id="position" name="position[]" class="form-control" value="{{$content->position}}" required>
                     </div>
                     @foreach ($section->inputs() as $input)
                         @include('contents.partials.' . $input)

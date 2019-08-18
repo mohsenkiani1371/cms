@@ -4,6 +4,10 @@ body {
     text-align: right;
 }
 
+.hidden {
+        display: none;
+}
+
 .s-2x {
     font-size: 2em;
 }
