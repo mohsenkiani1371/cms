@@ -32,10 +32,10 @@
                 <span class="lead">{{ translate($section->type) }}</span>
             </div>
             <div class="card-footer text-left">
-                <a href='#' class="btn btn-link text-decoration-none text-success mr-3">
+                <a href='{{url('sections/'.$section->id.'/edit')}}' class="btn btn-link text-decoration-none text-success mr-3">
                     <i class="fa fa-pencil s-1-5x" title="تغییر خصوصیات"></i>
                 </a>
-                <a href="#" class="btn btn-link text-decoration-none text-success mr-3">
+                <a href="{{url('contents/'.$section->id)}}" class="btn btn-link text-decoration-none text-success mr-3">
                     <i class="fa fa-edit s-1-5x" title="ویرایش اجزا و محتوا"></i>
                 </a>
                 <a href="javascript:void" class="btn btn-link text-decoration-none text-danger danger-alert mr-3" data-target="section-{{$section->id}}">
