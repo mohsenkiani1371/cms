@@ -3,16 +3,18 @@
     <form action="{{url('contents/'.$section->id)}}" method="post" enctype="multipart/form-data">
         @csrf
         <div id="box">
-            <div class="row clone">
-                <div class="col-md-3 my-2">
-                    <label for="position">ترتیب</label>
-                    <input type="number" name="position[]" class="form-control" required>
+            @foreach ($contents as $content)
+                <div class="row clone">
+                    <div class="col-md-3 my-2">
+                        <label for="position">ترتیب</label>
+                        <input type="number" name="position[]" class="form-control" value="{{$content->position}}" required>
+                    </div>
+                    @foreach ($section->inputs() as $input)
+                        @include('contents.partials.' . $input)
+                    @endforeach
+                    <hr class="col-10">
                 </div>
-                @foreach ($section->inputs() as $input)
-                    @include('contents.partials.' . $input)
-                @endforeach
-                <hr class="col-10">
-            </div>
+            @endforeach
         </div>
 
         <div class="add-row bg-dark p-2">
