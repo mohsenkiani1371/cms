@@ -37,7 +37,7 @@ class Section extends Model
                 return ['title', 'description'];
                 break;
             case 'clients':
-                return ['title', 'picture', 'cols'];
+                return ['title', 'picture'];
                 break;
             case 'posts':
                 return ['title', 'picture', 'cols', 'description'];
