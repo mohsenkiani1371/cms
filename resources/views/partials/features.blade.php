@@ -1,5 +1,6 @@
 <section class="gray-bg section-padding" id="feature-page">
     <div class="container">
+        @include('partials.section_title_and_description')
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
                 <div class="page-title">

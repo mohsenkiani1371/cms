@@ -56,7 +56,8 @@ class SectionController extends Controller
     public function update(Request $request, Section $section)
     {
         $data = Self::validation();
-        $section->update();
+        $section->update($data);
+        return redirect('home')->withMessage('تغییرات اجزا و خصوصیات بخش انجام شد.');
     }
 
     /**
@@ -83,6 +84,8 @@ class SectionController extends Controller
         return request()->validate([
             'type' => 'required',
             'position' => 'required',
+            'title' => 'nullable',
+            'description' => 'nullable',
         ]);
     }
 }
