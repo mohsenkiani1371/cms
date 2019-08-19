@@ -8,6 +8,11 @@ class Section extends Model
 {
     protected $guarded = ['id'];
 
+    public static function uploadable_contents()
+    {
+        return ['picture_path', 'picture1', 'picture2'];
+    }
+
     public function contents()
     {
         return $this->hasMany(Content::class)->orderBy('position');
@@ -20,7 +25,7 @@ class Section extends Model
                 return ['title', 'icon', 'picture', 'cols', 'description'];
                 break;
             case 'tabs':
-                return ['title', 'link_name', 'link_href', 'picture1', 'picture2', 'description'];
+                return ['title', 'subtitle', 'link_name', 'link_href', 'picture1', 'picture2', 'description'];
                 break;
             case 'prices':
                 return ['title', 'link_name', 'link_href', 'icon', 'cols', 'description'];

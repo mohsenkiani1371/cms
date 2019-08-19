@@ -51,11 +51,20 @@ class ContentController extends Controller
     public function prepare($data, $section_id)
     {
         $result = [];
+        $count = count ($data['position']);
+        $uploadables = Section::uploadable_contents();
         foreach ($data as $key => $array) {
             if (is_array($array)) {
                 foreach ($array as $i => $value) {
-                    $result [$i][$key] = $value;
-                    $result [$i]['section_id'] = $section_id;
+                    if (in_array($key, $uploadables)) {
+                        for ($j=0; $j < $count; $j++) {
+                            $result[$j][$key] = isset($data[$key][$j]) ? upload($value) : null;
+                        }
+                    }
+                    else {
+                        $result[$i][$key] = $value;
+                    }
+                    $result[$i]['section_id'] = $section_id;
                 }
             }
         }
