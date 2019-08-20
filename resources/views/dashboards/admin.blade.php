@@ -14,7 +14,9 @@
             <span class="lead">مدیریت منو</span>
         </div>
         <div class="card-footer text-left">
-            <a href="#" class="text-decoration-none text-success"> <i class="fa fa-edit s-1-5x" title="ویرایش"></i> </a>
+            <a href="{{url('menu')}}" class="text-decoration-none text-success">
+                <i class="fa fa-edit s-1-5x" title="ویرایش"></i>
+            </a>
         </div>
     </div>
     <div class="card my-2">

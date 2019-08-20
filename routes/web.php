@@ -8,6 +8,8 @@ Route::get('sections/visibility/{section}', 'SectionController@visibility');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('contents/{section}', 'ContentController@edit');
 Route::post('contents/{section}', 'ContentController@update');
+Route::get('menu', 'MenuController@edit');
+Route::post('menu', 'MenuController@update');
 
 Auth::routes();
 

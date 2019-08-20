@@ -5,11 +5,8 @@
         <div id="box">
             @foreach ($contents as $content)
                 <div class="row clone">
-                    <div class="col-md-1 my-2">
-                        <a class="btn btn-link text-danger delete-clone-row" title="حذف" @if(count($contents) == 1) style="display: none;" @endif>
-                            <i class="fa fa-trash fa-2x m-3"></i>
-                        </a>
-                    </div>
+                    @include('fragments.clone_trash', ['row_counts' => count($contents)])
+
                     <div class="col-md-2 my-2">
                         <label for="position">ترتیب</label>
                         <input type="number" id="position" name="position[]" class="form-control" value="{{$content->position}}" required>
@@ -22,11 +19,7 @@
             @endforeach
         </div>
 
-        <div class="add-row bg-dark p-2">
-            <div class="col-md-3 m-auto">
-                <a id="cloner" class="btn btn-primary btn-block bg-success text-light"> <i class="fa fa-plus ml-1"></i> افزودن مورد جدید </a>
-            </div>
-        </div>
+        @include('fragments.cloner')
 
         <hr>
 

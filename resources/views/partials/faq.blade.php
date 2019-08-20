@@ -2,14 +2,6 @@
     <div class="container">
         @include('partials.section_title_and_description')
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
-                <div class="page-title">
-                    <h2>Frequently Asked Questions</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit voluptates, temporibus at, facere harum fugiat!</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
             <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
                 <div class="panel-group" id="accordion">
                     @foreach ($section->contents as $content)
