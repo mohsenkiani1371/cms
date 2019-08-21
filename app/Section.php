@@ -31,7 +31,7 @@ class Section extends Model
                 return ['title', 'link_name', 'link_href', 'icon', 'cols', 'description'];
                 break;
             case 'cards':
-                return ['title', 'subtitle', 'picture', 'cols'];
+                return ['title', 'subtitle', 'picture', 'link_name', 'link_href', 'cols'];
                 break;
             case 'faq':
                 return ['title', 'description'];
